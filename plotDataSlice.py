@@ -48,6 +48,11 @@ def plot_data(df, title="Stock prices"):
     plt.show()
 
 
+def normalize_data(df):
+    "By normalizing, all the stocks start at 1, easier to obsv trends visually"
+    return df / df.ix[0:]  # Divide by first row
+
+
 def test_run():
     # Define a date range
     dates = pd.date_range('2010-01-01', '2010-12-31')
